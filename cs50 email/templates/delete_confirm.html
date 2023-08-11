@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Email
+{% endblock %}
+
+{% block main %}
+    <h1>Delete e-Mail</h1>
+    <body style="background-color: #FFFAD7;">
+    <form action="/delete-confirm" method="post">
+        <input type="hidden" name="emailId" value="{{ emailDetail.id }}">
+        <p>Are you sure you want to delete this email?</p>
+        <button class="button-Move" type="submit" name="confirmation" value="yes">Yes</button>
+        <button class="button-View" type="submit" name="confirmation" value="no">No</button>
+    </form>
+    </body>
+{% endblock %}
