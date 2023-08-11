@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bin
+{% endblock %}
+
+{% block main %}
+    <h1 style="color:#041562">Bin</h1>
+        <body style="background-color: #FFFAD7;">
+            <div class="table-responsive">
+                <table class="table table-bordered" style="background-color: #FFFFFF;">
+                    <thead style="background-color: #041562; color: white;">
+                        <tr>
+                            <th>Sender</th>
+                            <th>Recipient</th>
+                            <th>Subject</th>
+                            <th>Restore</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for email in emails %}
+                        <tr>
+                            <td>{{ email.sender }}</td>
+                            <td>{{ email.recipient }}</td>
+                            <td>{{ email.subject }}</td>
+                            <td>
+                                <form action="/restore" method="post">
+                                    <input type="hidden" name="emailId" value="{{ email.id }}">
+                                    <button class="button-View">Restore</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/delete" method="post">
+                                    <input type="hidden" name="emailId" value="{{ email.id }}">
+                                    <button class="button-Move">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </body>
+{% endblock %}
