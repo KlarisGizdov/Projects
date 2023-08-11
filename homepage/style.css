@@ -1,0 +1,64 @@
+li, span, a {
+    font-family: "Soin Sans Pro";
+    font-size: 25px;
+    font-style: italic;
+  }
+
+  p {
+    margin-top: 10px;
+    font-family: serif;
+    font-size: 25px;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Soin Sans Pro";
+    text-align: center;
+    margin-top: 1em;
+    font-size: 75px;
+    font-weight: bold;
+  }
+
+  body {
+    background-color: #f1e7e5;
+  }
+
+  .cotact-box {
+    width: 500px;
+    background-color: #518994;
+    box-shadow: 0 0 20px 0 #999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+form {
+  margin: 35px;
+}
+
+.input-field {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;
+}
+
+.textarea-field {
+  height: 150px;
+  padding-top: 10px;
+}
+
+.btn {
+  border-radius: 20px;
+  color: #fff;
+  margin-top: 18px;
+  padding: 10px;
+  background-color: #518994;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
