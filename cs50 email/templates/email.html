@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Emails
+{% endblock %}
+
+{% block main %}
+    <body style="background-color: #FFFAD7;">
+        <div class="center-div">
+            <div class="list-group-item view-email">
+                <strong style="color:#041562">Sender: </strong> {{ emailDetail.sender }}
+            </div>
+            <div class="list-group-item view-email">
+                <strong style="color:#041562">To:</strong> {{ emailDetail.recipient }}
+            </div>
+            <div class="list-group-item view-email">
+                <strong style="color:#041562">Subject:</strong> {{ emailDetail.subject }}
+            </div>
+            <div class="list-group-item view-email">
+                <strong style="color:#041562">Timestamp:</strong> {{ emailDetail.timestamp }}
+            </div>
+            <div class="list-group-item view-email">
+                <strong style="color:#041562">Text:</strong> {{ emailDetail.body }}
+            </div>
+            <div class="my-3">
+                <form action="reply" method="post">
+                    <input type="hidden" name="emailId" value="{{ emailDetail.id }}">
+                    <button class="button-send">Reply</button>
+                </form>
+            </div>
+        </div>
+    </body>
+{% endblock %}
