@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Restore Email
+{% endblock %}
+
+{% block main %}
+    <h1>Restore e-Mail</h1>
+    <body style="background-color: #FFFAD7;">
+    <form action="/restore-confirm" method="post">
+        <input type="hidden" name="emailId" value="{{ emailDetail.id }}">
+        <p>Are you sure you want to restore this email?</p>
+        <button class="button-View" type="submit" name="confirmation" value="yes">Yes</button>
+        <button class="button-send" type="submit" name="confirmation" value="no">No</button>
+    </form>
+    </body>
+{% endblock %}
