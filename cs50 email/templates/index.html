@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Emails
+{% endblock %}
+
+{% block main %}
+    <body style="background-color: #FFFAD7;">
+        <div class="table-responsive">
+            <table class="table table-bordered" style="background-color: #FFFFFF;">
+                <thead style="background-color: #041562; color: white;">
+                    <tr>
+                        <th>Sender</th>
+                        <th>Subject</th>
+                        <th>Timestamp</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for email in emails %}
+                    <tr>
+                        <td>{{ email.sender }}</td>
+                        <td>{{ email.subject }}</td>
+                        <td>{{ email.timestamp }}</td>
+                        <td>
+                            <form action="email" method="post">
+                                <input type="hidden" name="emailId" value="{{ email.id }}">
+                                <button class="button-View">View Email</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/bin" method="POST">
+                                <input type="hidden" name="email_id" value="{{ email.id }}">
+                                <button class="button-Move">Move to Bin</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+{% endblock %}
